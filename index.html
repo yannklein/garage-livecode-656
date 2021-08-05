@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="stylesheets/style.css">
   </head>
   <body>
-    <div class="app">
+    <div data-controller="garage" class="app">
       <div class="garage">
         <div class="garage-image">
           <div class="garage-logo">
@@ -23,18 +23,18 @@
           <div class="text-center">
 
             <form class="car-form" id="new-car">
-              <input id="brand" type="text" class="form-control" placeholder="Ferrari" />
-              <input id="model" type="text" class="form-control" placeholder="308 GTS" />
-              <input id="plate" type="text" class="form-control" placeholder="56E-478" />
-              <input id="owner" type="text" class="form-control" placeholder="Thomas Magnum" />
-              <input type="submit" id="submit-btn" class="btn btn-cta" value="Add a Car" />
+              <input data-garage-target="brand" id="brand" type="text" class="form-control" placeholder="Ferrari" />
+              <input data-garage-target="model" id="model" type="text" class="form-control" placeholder="308 GTS" />
+              <input data-garage-target="plate" id="plate" type="text" class="form-control" placeholder="56E-478" />
+              <input data-garage-target="owner" id="owner" type="text" class="form-control" placeholder="Thomas Magnum" />
+              <input data-action="click->garage#addCar" type="submit" id="submit-btn" class="btn btn-cta" value="Add a Car" />
             </form>
 
           </div>
         </div>
       </div>
 
-      <div class="cars-list">
+      <div  data-garage-target="carList" class="cars-list">
 
         <!-- NOTE: The team designer left you this template for a car. Enjoy! -->
         <div class="car">
@@ -47,9 +47,7 @@
             <p><strong>Plate:</strong> 56E-478</p>
           </div>
         </div>
-
       </div>
-
     </div>
 
     <script src="dist/main.js"></script>

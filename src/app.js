@@ -1,5 +1,7 @@
-// DON'T CHANGE THIS LINE
-const myBadAssGarage = "";
-if (myBadAssGarage) document.querySelector("#garage-name").innerText = myBadAssGarage.replace(/-/g, " ");
-// //////////////////////
+import { Application } from 'stimulus'
+import { definitionsFromContext } from 'stimulus/webpack-helpers'
 
+// initialize StimulusJS
+const application = Application.start()
+const context = require.context('./controllers', true, /\.js$/)
+application.load(definitionsFromContext(context))
